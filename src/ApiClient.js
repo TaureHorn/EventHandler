@@ -1,6 +1,7 @@
 import axios from "axios";
 const authUrl = "http://localhost:3001/auth"
 const url = "http://localhost:3001/event"
+const rootUrl = "http://localhost:3000/"
 
 export class ApiClient {
     constructor(tokenProvider, logoutHandler) {
@@ -17,7 +18,7 @@ export class ApiClient {
             },
             data,
         }).catch((err) => {
-            if (err.response.status === 401 || err.response.status === 403) {
+            if (err.response.status === 401 || err.response.status === 403 ) {
                 this.logoutHandler();
             } else { throw err; }
         });
@@ -35,7 +36,6 @@ export class ApiClient {
 
     // add event by object
     addEvent(obj) {
-        console.log(obj)
         return this.authenticatedCall("post", `${url}/create`, obj);
     }
     
@@ -70,8 +70,9 @@ export class ApiClient {
     }
 
     // delete specific
-    deleteEventById(eventId) {
-        return this.authenticatedCall("delete", `${url}/${eventId}`);
+    deleteEventById(id) {
+        console.log(`${url}/delete/${id}`)
+        return this.authenticatedCall("delete", `${url}/delete/${id}`);        
     }
 
     // delete all

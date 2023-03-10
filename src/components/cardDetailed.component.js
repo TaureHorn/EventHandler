@@ -1,8 +1,11 @@
-import { Button, Card } from 'react-bootstrap';
+// This file is now redundant - replaced by eventAccordion.component.js
+import { Button, Card, Container, Row } from "react-bootstrap";
 
 function DetailedCard(props) {
+    const event = props.event;
+    console.log(event)
 return (
-    <Card class="card" style={{ width: '18rem' }}>
+    <Card key={event.id} class="card" style={{ width: '30rem' }}>
         <Card.Body>
             <Card.Title>
                 <h2>{props.date} {props.time}</h2>

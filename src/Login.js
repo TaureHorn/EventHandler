@@ -9,7 +9,6 @@ function Login(props) {
 
         props.client
             .login(e.target.username.value, e.target.password.value)
-            // console.log("inputed username is " + e.target.username.value + " inputed password is " + e.target.password.value)
             .then((response) => {
                 setDisabled(false);
                 props.loggedIn(response.data.token);

@@ -16,8 +16,9 @@ function NavigationBar() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="/event">Events</Nav.Link>
+                        <Nav.Link href="/">Events </Nav.Link>
                         <Nav.Link href="/newevent">Add new event</Nav.Link>
+                        
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
