@@ -44,7 +44,6 @@ function Events(props) {
               <EventAccordion
                 client={client}
                 events={events}
-                getEvents={getEvents()}
                 updateTrigger={(updateTrigger) =>
                   setUpdateTrigger(updateTrigger)
                 }

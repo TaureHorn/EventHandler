@@ -26,15 +26,18 @@ function EventAccordion(props) {
       >
         <AccordionItem eventKey={event._id}>
           <Accordion.Header>
-            <h2>{event.name}</h2>
-            <br />
-            <h5>{event.date}</h5>
-            <h5>{event.time}</h5>
+            <div className="event-bar">
+              <h2>{event.name}</h2>
+              <br />
+              <div className="event-right">
+                <h5>{event.date}</h5>
+                <h5>{event.time}</h5>
+              </div>
+            </div>
           </Accordion.Header>
           <AccordionBody>
-            <h3>Location: {event.location}</h3>
+            <h3 className="form-text">Location: {event.location}</h3>
             <hr></hr>
-            <h4>Info</h4>
             <p>{event.info}</p>
             <Link to={"/updateevent"}>
               <Button
@@ -57,9 +60,19 @@ function EventAccordion(props) {
   });
 
   return (
-    <Container>
-      {renderedEvents}
-      <button onClick={props.getEvents}> Update events </button>
+    <Container className="cont-center">
+      <div className="center">
+        <div className="center">
+          <div className="center">
+            <h1 className="page-title">Events</h1>
+          </div>
+          {renderedEvents}
+          <button onClick={() => props.client.getEvents()}>
+            {" "}
+            Update events{" "}
+          </button>
+        </div>
+      </div>
     </Container>
   );
 }

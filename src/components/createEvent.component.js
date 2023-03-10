@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
 
 function NewEventForm(props) {
   const [disabled, setDisabled] = useState(false);
@@ -33,68 +34,75 @@ function NewEventForm(props) {
 
   return (
     <>
-      <h2>New Event</h2>
-      <br />
-      <form onSubmit={(e) => submitHandler(e)} id="eventForm">
-        Date
+      <Container className="cont-center">
+        <div className="center">
+          <h2 className="page-title">New Event</h2>
+        </div>
         <br />
-        <input
-          type="text"
-          name="date"
-          placeholder="dd-mm-yy"
-          disabled={disabled}
-          required
-        />
-        <br />
-        <br />
-        Time
-        <br />
-        <input
-          type="text"
-          name="time"
-          placeholder="13:00 / all day"
-          disabled={disabled}
-        />
-        <br />
-        <br />
-        Event name
-        <br />
-        <input
-          type="text"
-          name="name"
-          placeholder="Drinks with Angie"
-          disabled={disabled}
-          required
-        />
-        <br />
-        <br />
-        Location
-        <br />
-        <input
-          type="text"
-          name="location"
-          placeholder="Victoria Arms"
-          disabled={disabled}
-          required
-        />
-        <br />
-        <br />
-        Event details
-        <br />
-        <textarea
-          name="details"
-          placeholder="Meet for Angies birthday"
-          disabled={disabled}
-        />
-        <br />
-        <br />
-        <button type="submit" disabled={disabled}>
-          {" "}
-          Submit{" "}
-        </button>
-      </form>
-      <Link to={"/"}><button>Back to events</button></Link>
-      
+        <div className="login-form">
+          <form onSubmit={(e) => submitHandler(e)} id="eventForm">
+            <span className="form-text">Date</span>
+            <br />
+            <input
+              type="text"
+              name="date"
+              placeholder="dd-mm-yy"
+              disabled={disabled}
+              required
+            />
+            <br />
+            <br />
+            <span className="form-text">Time</span>
+            <br />
+            <input
+              type="text"
+              name="time"
+              placeholder="13:00 / all day"
+              disabled={disabled}
+            />
+            <br />
+            <br />
+            <span className="form-text">Event name</span>
+            <br />
+            <input
+              type="text"
+              name="name"
+              placeholder="Drinks with Angie"
+              disabled={disabled}
+              required
+            />
+            <br />
+            <br />
+            <span className="form-text">Location</span>
+            <br />
+            <input
+              type="text"
+              name="location"
+              placeholder="Victoria Arms"
+              disabled={disabled}
+              required
+            />
+            <br />
+            <br />
+            <span className="form-text">Event details</span>
+            <br />
+            <textarea
+              name="details"
+              placeholder="Meet for Angies birthday"
+              disabled={disabled}
+            />
+            <br />
+            <br />
+            <button type="submit" disabled={disabled}>
+              {" "}
+              Submit{" "}
+            </button>
+          </form>
+          <Link to={"/"}>
+            <button>Back to events</button>
+          </Link>
+        </div>
+      </Container>
     </>
   );
 }

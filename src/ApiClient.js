@@ -18,7 +18,7 @@ export class ApiClient {
             },
             data,
         }).catch((err) => {
-            if (err.response.status === 401 || err.response.status === 403 ) {
+            if (err?.response.status === 401 || err?.response.status === 403 ) {
                 this.logoutHandler();
             } else { throw err; }
         });
@@ -27,6 +27,7 @@ export class ApiClient {
     async login(userName, password) {
         console.log(`${authUrl}`, {userName, password})
         const response = await axios.post(`${authUrl}`, {userName, password});        
+        console.log(response)
         return response        
     }
     // new event by individual parameters
