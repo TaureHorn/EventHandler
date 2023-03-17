@@ -14,7 +14,7 @@ function Login(props) {
         props.loggedIn(response.data.token);
       })
       .catch(() => {
-        alert("an error occursed, please try again");
+        alert("an error occurred, please try again");
         setDisabled(false);
       });
   };

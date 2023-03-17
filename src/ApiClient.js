@@ -1,10 +1,10 @@
 import axios from "axios";
-const authUrl = "https://eventhandler-api.onrender.com//auth"
-// const authUrl = "http://localhost:3001/auth"
-const url = "https://eventhandler-api.onrender.com/event"
-// const url = "http://localhost:3001/event"
-const rootUrl = "https://eventhandler-ajfi.onrender.com/"
-// const rootUrl = "http://localhost:3000/"
+// const authUrl = "https://eventhandler-api.onrender.com/auth"
+const authUrl = "http://localhost:3001/auth"
+// const url = "https://eventhandler-api.onrender.com/event"
+const url = "http://localhost:3001/event"
+// const rootUrl = "https://eventhandler-ajfi.onrender.com/"
+const rootUrl = "http://localhost:3000/"
 
 
 export class ApiClient {
@@ -29,7 +29,7 @@ export class ApiClient {
     }
 
     async login(userName, password) {
-        console.log(`${authUrl}`, {userName, password})
+        console.log("login function triggers " + `${authUrl}`, {userName, password})
         const response = await axios.post(`${authUrl}`, {userName, password});        
         console.log(response)
         return response        
